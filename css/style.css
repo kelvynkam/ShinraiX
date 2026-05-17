@@ -235,6 +235,69 @@ footer{
 
 }
 
+/* ==========LOGIN========== */
+.login-container{
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: 
+    linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+    url("../assets/img/banners/hxh-banner.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.login-box{
+    width: 100%;
+    max-width: 400px;
+    background: rgba(20,20,20,0.85);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.6);
+}
+
+.login-box h1{
+    text-align: center;
+    font-size: 30px;
+}
+
+.login-box input{
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2a2a2a;
+    color: white;
+    font-size: 16px;
+}
+
+.login-box input:focus{
+    outline: 2px solid red;
+}
+
+.login-box button{
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.login-texto{
+    text-align: center;
+    color: #aaa;
+    font-size: 14px;
+}
+
+.login-texto a{
+    color: red;
+    text-decoration: none;
+}
+
 /* ==========RESPONSIVIDADE========== */
 @media (max-width: 768px) {
     .topo {
