@@ -244,15 +244,30 @@ footer{
     }
     
     .banner {
-        padding: 30px;
+        padding: 20px;
         height: auto;
-        min-height: 400px;
+        min-height: 350px;
     }
     
     .banner h1 {
-        font-size: 40px;
+        font-size: 32px;
     }
     
+    .banner p{
+        font-size: 16px;
+
+    }
+
+    nav{
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    }
+
+    nav a{
+    font-size: 16px;
+    }
+
     .catalogo {
         padding: 20px;
     }
@@ -262,6 +277,23 @@ footer{
     }
     
     .anime-card {
-        width: 260px;
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .anime-card h2{
+    font-size: 18px;
+    }
+
+    .anime-card .descricao{
+    font-size: 15px;
+    }
+
+    .info h1{
+        font-size: 36px;
+    }
+
+    .info p{
+        font-size: 16px;
     }
 }
