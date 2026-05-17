@@ -46,8 +46,39 @@ listaFavoritos.forEach(id => {
             <button>Assistir agora</button>
         </a>
 
+        <button class="remover-btn" data-id="${id}">
+            ❌ Remover
+        </button>
+
     </div>
 
     `;
+
+});
+
+const botoesRemover =
+document.querySelectorAll(".remover-btn");
+
+botoesRemover.forEach(botao => {
+
+    botao.addEventListener("click", () => {
+
+        const id = botao.dataset.id;
+
+        let favoritos =
+        JSON.parse(localStorage.getItem("favoritos")) || [];
+
+        favoritos = favoritos.filter(
+            anime => anime !== id
+        );
+
+        localStorage.setItem(
+            "favoritos",
+            JSON.stringify(favoritos)
+        );
+
+        location.reload();
+
+    });
 
 });
