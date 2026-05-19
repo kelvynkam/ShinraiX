@@ -1,36 +1,25 @@
+//Adiciona os favoritos
 const listaFavoritos =
 JSON.parse(localStorage.getItem("favoritos")) || [];
-
-const animes = {
-
-    hxh: {
-        titulo: "Hunter X Hunter",
-        generos: "Aventura • Ação • Shounen",
-        descricao: "Gon busca encontrar seu pai e se tornar Hunter.",
-        imagem: "../assets/img/capas/hxh.png"
-    },
-
-    bleach: {
-        titulo: "Bleach",
-        generos: "Aventura • Ação • Shounen",
-        descricao: "Ichigo ganha poderes de Shinigami.",
-        imagem: "../assets/img/capas/bleach.svg"
-    }
-
-};
 
 const linhaAnimes =
 document.querySelector(".linha-animes");
 
 listaFavoritos.forEach(id => {
 
-    const anime = animes[id];
+    const anime = animes.find(
+        anime => anime.id === id
+    );
+
+    if(!anime){
+        return;
+    }
 
     linhaAnimes.innerHTML += `
 
     <div class="anime-card">
 
-        <img src="${anime.imagem}" alt="${anime.titulo}">
+        <img src="../${anime.imagem}" alt="${anime.titulo}">
 
         <h2>${anime.titulo}</h2>
 
@@ -56,14 +45,12 @@ listaFavoritos.forEach(id => {
 
 });
 
-const botoesRemover =
-document.querySelectorAll(".remover-btn");
+// Remoção dos favoritos
+document.addEventListener("click", (event) => {
 
-botoesRemover.forEach(botao => {
+    if(event.target.classList.contains("remover-btn")){
 
-    botao.addEventListener("click", () => {
-
-        const id = botao.dataset.id;
+        const id = event.target.dataset.id;
 
         let favoritos =
         JSON.parse(localStorage.getItem("favoritos")) || [];
@@ -78,7 +65,6 @@ botoesRemover.forEach(botao => {
         );
 
         location.reload();
-
-    });
+    }
 
 });
