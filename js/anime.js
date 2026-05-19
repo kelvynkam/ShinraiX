@@ -15,6 +15,25 @@ const caminhoBanner = estaNaPastaPages
 ? "../" + dados.banner
 : dados.banner;
 
+const listaEpisodios =
+document.querySelector(".episodios-lista");
+dados.episodios.forEach(episodio => {
+
+    listaEpisodios.innerHTML += `
+    
+    <div class="episodio-card">
+    
+        <h3>EP ${episodio.numero}</h3>
+
+        <p>${episodio.titulo}</p>
+
+        <button>Assistir</button>
+
+    </div>
+    
+    `;
+});
+
 document.getElementById("anime-titulo").textContent =
 dados.titulo;
 

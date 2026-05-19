@@ -174,10 +174,56 @@ nav a:hover{
     transform: scale(1.05);
 }
 
+/* ==========EPISODIOS DOS ANIMES============*/
+
+.episodios{
+    padding: 40px;
+    background-color: #111;
+}
+
+.episodios h2{
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.episodios-lista{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.episodio-card{
+    gap: 20px;
+    background-color: #1b1b1b;
+    padding: 20px;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    transition: 0.3s;
+}
+
+.episodio-card:hover{
+    background-color: #252525;
+}
+
+.episodio-card h3{
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.episodio-card p{
+    flex: 1;
+    color: #ccc;
+}
+
 /* ==========PÁGINA DO ANIME========== */
 .anime-detalhes{
     position: relative;
-    min-height: 90vh;
+    min-height: 70vh;
     display: flex;
     align-items: end;
     padding: 60px;
@@ -202,6 +248,12 @@ nav a:hover{
     position: relative;
     z-index: 2;
     max-width: 600px;
+
+    margin-bottom: 40px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .info h1{
