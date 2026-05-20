@@ -41,7 +41,7 @@ document.getElementById("anime-generos").textContent =
 dados.generos;
 
 document.getElementById("anime-descricao").textContent =
-dados.descricao;
+dados.sinopse;
 
 document.querySelector(".anime-detalhes").style.backgroundImage =
 `linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.4)), url(${caminhoBanner})`;
