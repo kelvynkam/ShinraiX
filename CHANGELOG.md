@@ -21,3 +21,4 @@ Todas as mudanças importantes do projeto ShinraiX serão documentadas aqui.
 - Ajustes de layout na página do anime
 - Melhor organização dos arquivos JavaScript
 - Correção de caminhos de imagens e páginas
+- Mensagem de anime não encontrado na busca

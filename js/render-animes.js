@@ -12,6 +12,20 @@ function renderizarAnimes(lista){
     
     linhaAnimes.innerHTML = "";
 
+    if(lista.length === 0){
+            
+            linhaAnimes.innerHTML = `
+            
+                <p class="nenhum-anime">
+                    Nenhum anime encontrado.
+                </p>
+            
+            `;
+
+            return;
+
+        }
+
     lista.forEach(anime => {
 
         linhaAnimes.innerHTML += `
@@ -64,6 +78,13 @@ if(campoBusca){
             anime.titulo
             .toLowerCase()
             .includes(textoDigitado)
+
+            ||
+
+            anime.generos
+            .toLowerCase()
+            .includes(textoDigitado)
+            
         );
 
         renderizarAnimes(animesFiltrados);

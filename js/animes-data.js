@@ -32,7 +32,7 @@ const animes = [
     {
         id: "bleach",
         titulo: "Bleach",
-        generos: "Aventura • Ação • Shounen",
+        generos: "Ação • Shounen",
         descricao: "Ichigo ganha poderes de Shinigami.",
         sinopse: "Bleach segue a história de Ichigo Kurosaki, um estudante de 15 anos que consegue ver espíritos. Sua vida muda ao conhecer Rukia Kuchiki, uma Shinigami (Deus da Morte). Ao salvar sua família de um espírito corrompido, Ichigo absorve os poderes dela e se torna um Shinigami Substituto, protegendo o mundo dos espíritos malignos (Hollows)",
         imagem: "assets/img/capas/bleach.svg",
