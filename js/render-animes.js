@@ -1,3 +1,6 @@
+const linhaAnimes =
+document.querySelector(".linha-animes");
+
 const estaNaPastaPages =
 window.location.pathname.includes("/pages/");
 
@@ -5,41 +8,66 @@ const caminhoAnime = estaNaPastaPages
 ? "../pages/anime.html"
 : "pages/anime.html";
 
-const linhaAnimes =
-document.querySelector(".linha-animes");
+function renderizarAnimes(lista){
+    
+    linhaAnimes.innerHTML = "";
 
-animes.forEach(anime => {
+    lista.forEach(anime => {
 
-    const caminhoImagem = estaNaPastaPages
-    ? "../" + anime.imagem
-    : anime.imagem;
+        linhaAnimes.innerHTML += `
+        
+        <div class="anime-card">
 
-    linhaAnimes.innerHTML += `
+            <img src="${estaNaPastaPages ? "../" + anime.imagem : anime.imagem}" alt="${anime.titulo}">
 
-    <div class="anime-card">
+            <h2>${anime.titulo}</h2>
 
-        <img src="${caminhoImagem}" alt="${anime.titulo}">
-
-        <h2>${anime.titulo}</h2>
-
-        <p class="generos">
+            <p class="generos">
             ${anime.generos}
-        </p>
+            </p>
 
-        <p class="descricao">
+            <p class="descricao">
             ${anime.descricao}
-        </p>
+            </p>
 
-        <a href="${caminhoAnime}?anime=${anime.id}">
-            <button>Assistir agora</button>
-        </a>
+            <a href="${caminhoAnime}?anime=${anime.id}">
+                <button>Assistir agora</button>
+            </a>
 
-        <button class="favorito-btn" data-anime="${anime.id}">
-            ❤️ Favoritar
-        </button>
+            <button class="favorito-btn" data-anime="${anime.id}">
+                ❤️ Favoritar
+            </button>
 
-    </div>
+        </div>
 
-    `;
+        `;
 
-});
+    });
+
+}
+
+renderizarAnimes(animes);
+
+const campoBusca =
+document.getElementById("busca-anime");
+
+if(campoBusca){
+
+    campoBusca.addEventListener("input", () =>{
+
+        const textoDigitado =
+        campoBusca.value.toLowerCase();
+
+        const animesFiltrados =
+        animes.filter(anime =>
+
+            anime.titulo
+            .toLowerCase()
+            .includes(textoDigitado)
+        );
+
+        renderizarAnimes(animesFiltrados);
+
+    });
+
+}

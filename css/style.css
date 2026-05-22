@@ -272,6 +272,32 @@ nav a:hover{
     font-size: 18px;
     padding: 14px 30px;
 }
+
+/* ==========BUSCA========== */
+
+.busca-container{
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+#busca-anime{
+    width: 100%;
+    max-width: 500px;
+    padding: 14px 20px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #1b1b1b;
+    color: white;
+
+    font-size: 16px;
+}
+
+#busca-anime:focus{
+    outline: 2px solid red;
+}
 /* ==========BOTÕES========== */
 button{
     background-color: red;
