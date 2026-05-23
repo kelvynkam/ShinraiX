@@ -1,3 +1,6 @@
+const favoritosSalvos =
+JSON.parse(localStorage.getItem("favoritos")) || [];
+
 const linhaAnimes =
 document.querySelector(".linha-animes");
 
@@ -28,6 +31,9 @@ function renderizarAnimes(lista){
 
     lista.forEach(anime => {
 
+        const estaFavoritado =
+        favoritosSalvos.includes(anime.id);
+
         linhaAnimes.innerHTML += `
         
         <div class="anime-card">
@@ -48,8 +54,8 @@ function renderizarAnimes(lista){
                 <button>Assistir agora</button>
             </a>
 
-            <button class="favorito-btn" data-anime="${anime.id}">
-                ❤️ Favoritar
+            <button class="favorito-btn ${estaFavoritado ? "favoritados" : ""}" data-anime="${anime.id}">
+                ${estaFavoritado ? "✅ Favoritado" : "❤️ Favoritar"}
             </button>
 
         </div>
@@ -84,7 +90,7 @@ if(campoBusca){
             anime.generos
             .toLowerCase()
             .includes(textoDigitado)
-            
+
         );
 
         renderizarAnimes(animesFiltrados);

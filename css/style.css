@@ -299,7 +299,6 @@ nav a:hover{
     outline: 2px solid red;
 }
 
-/* ==========BOTÕES========== */
 .nenhum-anime{
     width: 100%;
     text-align: center;
@@ -321,6 +320,13 @@ button:hover{
     background-color: darkred;
 }
 
+.favoritados{
+    background-color: #1db954;
+}
+
+.favoritados:hover{
+    background-color: #169c46;
+}
 /* ==========FOOTER========== */
 footer{
     background-color: #0d0d0d;
