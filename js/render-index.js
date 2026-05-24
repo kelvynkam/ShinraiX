@@ -2,7 +2,7 @@ const favoritosSalvos =
 JSON.parse(localStorage.getItem("favoritos")) || [];
 
 const linhaAnimes =
-document.querySelector(".catalogo-animes");
+document.querySelector(".linha-animes");
 
 const estaNaPastaPages =
 window.location.pathname.includes("/pages/");

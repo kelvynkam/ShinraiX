@@ -108,7 +108,28 @@ nav a:hover{
     display: flex;
     gap: 30px;
     justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+
+    padding-top: 20px;
+}
+
+.catalogo-animes{
+    display: flex;
+    gap: 30px;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+.linha-animes::-webkit-scrollbar{
+    height: 8px;
+}
+
+.linha-animes::-webkit-scrollbar-thumb{
+    background-color: #444;
+    border-radius: 10px;
 }
 
 /* ==========CARDS========== */
@@ -125,6 +146,7 @@ nav a:hover{
     /* ALINHAMENTO VERTICAL DO CONTEÚDO */
     display: flex;
     flex-direction: column;
+    flex-shrink: 0;
 }
 
 .anime-card img{
