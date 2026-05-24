@@ -70,15 +70,37 @@ nav a:hover{
     align-items: center;
     padding: 60px;
     margin-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+    pointer-events: none;
+    z-index: 1;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        #111
+    );
 }
 
 .banner-conteudo{
     max-width: 500px;
+    position: relative;
+    z-index: 2;
 }
 
 .banner h1{
     font-size: 60px;
     margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
 }
 
 .banner p{
@@ -464,21 +486,35 @@ footer{
         padding: 20px;
     }
     
-    .linha-animes {
-        justify-content: center;
+    .linha-animes{
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 16px;
+        padding: 0 20px 15px 20px;
+        padding-top: 20px;
+        scroll-snap-type: x mandatory;
     }
-    
-    .anime-card {
+
+    .linha-animes .anime-card{
+        width: 260px;
+        min-width: 260px;
+        max-width: 260px;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+    }
+
+    .catalogo-animes .anime-card{
         width: 100%;
         max-width: 320px;
     }
 
     .anime-card h2{
-    font-size: 18px;
+        font-size: 18px;
     }
 
     .anime-card .descricao{
-    font-size: 15px;
+        font-size: 15px;
     }
 
     .info h1{
