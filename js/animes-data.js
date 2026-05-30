@@ -18,17 +18,20 @@ const animes = [
 
             {
                 numero: 1,
-                titulo: "Partida x e x Amigos"
+                titulo: "Partida x e x Amigos",
+                video: "assets/videos/001.mp4"
             },
 
             {
                 numero: 2,
-                titulo: "Teste x dos x Hunters"
+                titulo: "Teste x dos x Hunters",
+                video: "assets/videos/001.mp4"
             },
 
             {
                 numero: 3,
-                titulo: "Rivais x pela x Sobrevivência"
+                titulo: "Rivais x pela x Sobrevivência",
+                video: "assets/videos/001.mp4"
             }
 
         ]
@@ -51,17 +54,20 @@ const animes = [
 
             {
                 numero: 1,
-                titulo: "O Dia em que Me Tornei um Shinigami"
+                titulo: "O Dia em que Me Tornei um Shinigami",
+                video: "assets/videos/001.mp4"
             },
 
             {
                 numero: 2,
-                titulo: "O Trabalho de um Shinigami"
+                titulo: "O Trabalho de um Shinigami",
+                video: "assets/videos/001.mp4"
             },
 
             {
                 numero: 3,
-                titulo: "O Desejo do Irmão Mais Velho"
+                titulo: "O Desejo do Irmão Mais Velho",
+                video: "assets/videos/001.mp4"
             }
 
         ]
@@ -85,17 +91,20 @@ const animes = [
 
             {
                 numero: 1,
-                titulo: "Eu Sou Luffy!"
+                titulo: "Eu Sou Luffy!",
+                video: "assets/videos/001.mp4"
             },
 
             {
                 numero: 2,
-                titulo: "O Espadachim Zoro"
+                titulo: "O Espadachim Zoro",
+                video: "assets/videos/001.mp4"
             },
 
             {
                 numero: 3,
                 titulo: "O Espadachim Zoro"
+                ,video: "assets/videos/001.mp4"
             }
 
         ]
@@ -117,15 +126,18 @@ const animes = [
         episodios: [
             {
                 numero: 1,
-                titulo: "Entre! Naruto Uzumaki!"
+                titulo: "Entre! Naruto Uzumaki!",
+                video: "assets/videos/001.mp4"
             },
             {
                 numero: 2,
-                titulo: "Meu Nome é Konohamaru!"
+                titulo: "Meu Nome é Konohamaru!",
+                video: "assets/videos/001.mp4"
             },
             {
                 numero: 3,
-                titulo: "Sasuke e Sakura: Amigos ou Inimigos?"
+                titulo: "Sasuke e Sakura: Amigos ou Inimigos?",
+                video: "assets/videos/001.mp4"
             }
         ]
     },
@@ -146,15 +158,18 @@ const animes = [
         episodios: [
             {
                 numero: 1,
-                titulo: "Para Você, em 2000 Anos"
+                titulo: "Para Você, em 2000 Anos",
+                video: "assets/videos/001.mp4"
             },
             {
                 numero: 2,
-                titulo: "Naquele Dia"
+                titulo: "Naquele Dia",
+                video: "assets/videos/001.mp4"
             },
             {
                 numero: 3,
-                titulo: "Uma Luz Fraca em Meio ao Desespero"
+                titulo: "Uma Luz Fraca em Meio ao Desespero",
+                video: "assets/videos/001.mp4"
             }
         ]
     },
@@ -175,15 +190,18 @@ const animes = [
         episodios: [
             {
                 numero: 1,
-                titulo: "Crueldade"
+                titulo: "Crueldade",
+                video: "assets/videos/001.mp4"
             },
             {
                 numero: 2,
-                titulo: "Treinador Sakonji Urokodaki"
+                titulo: "Treinador Sakonji Urokodaki",
+                video: "assets/videos/001.mp4"
             },
             {
                 numero: 3,
-                titulo: "Sabito e Makomo"
+                titulo: "Sabito e Makomo",
+                video: "assets/videos/001.mp4"
             }
         ]
     },
@@ -204,15 +222,18 @@ const animes = [
         episodios: [
             {
                 numero: 1,
-                titulo: "Ryomen Sukuna"
+                titulo: "Ryomen Sukuna",
+                video: "assets/videos/001.mp4"
             },
             {
                 numero: 2,
-                titulo: "Por Mim Mesmo"
+                titulo: "Por Mim Mesmo",
+                video: "assets/videos/001.mp4"
             },
             {
                 numero: 3,
-                titulo: "Garota de Aço"
+                titulo: "Garota de Aço",
+                video: "assets/videos/001.mp4"
             }
         ]
     },
@@ -233,15 +254,18 @@ const animes = [
         episodios: [
             {
                 numero: 1,
-                titulo: "Renascimento"
+                titulo: "Renascimento",
+                video: "assets/videos/001.mp4"
             },
             {
                 numero: 2,
-                titulo: "Confronto"
+                titulo: "Confronto",
+                video: "assets/videos/001.mp4"
             },
             {
                 numero: 3,
-                titulo: "Negociação"
+                titulo: "Negociação",
+                video: "assets/videos/001.mp4"
             }
         ]
     },
@@ -262,15 +286,18 @@ const animes = [
         episodios: [
             {
                 numero: 1,
-                titulo: "O Segredo dos Saiyajins"
+                titulo: "O Segredo dos Saiyajins",
+                video: "assets/videos/001.mp4"
             },
             {
                 numero: 2,
-                titulo: "O Guerreiro Mais Forte da História"
+                titulo: "O Guerreiro Mais Forte da História",
+                video: "assets/videos/001.mp4"
             },
             {
                 numero: 3,
-                titulo: "A Combinação Mais Forte do Mundo"
+                titulo: "A Combinação Mais Forte do Mundo",
+                video: "assets/videos/001.mp4"
             }
         ]
     },
@@ -291,15 +318,18 @@ const animes = [
         episodios: [
             {
                 numero: 1,
-                titulo: "Tragédia"
+                titulo: "Tragédia",
+                video: "assets/videos/001.mp4"
             },
             {
                 numero: 2,
-                titulo: "Incubação"
+                titulo: "Incubação",
+                video: "assets/videos/001.mp4"
             },
             {
                 numero: 3,
-                titulo: "Pomba"
+                titulo: "Pomba",
+                video: "assets/videos/001.mp4"
             }
         ]
     },
@@ -320,15 +350,18 @@ const animes = [
         episodios: [
             {
                 numero: 1,
-                titulo: "Cachorro e Motosserra"
+                titulo: "Cachorro e Motosserra",
+                video: "assets/videos/001.mp4"
             },
             {
                 numero: 2,
-                titulo: "Chegada em Tóquio"
+                titulo: "Chegada em Tóquio",
+                video: "assets/videos/001.mp4"
             },
             {
                 numero: 3,
-                titulo: "Onde Está o Meowy?"
+                titulo: "Onde Está o Meowy?",
+                video: "assets/videos/001.mp4"
             }
         ]
     },
@@ -349,15 +382,18 @@ const animes = [
         episodios: [
             {
                 numero: 1,
-                titulo: "Operação Strix"
+                titulo: "Operação Strix",
+                video: "assets/videos/001.mp4"
             },
             {
                 numero: 2,
-                titulo: "Arrumar uma Esposa"
+                titulo: "Arrumar uma Esposa",
+                video: "assets/videos/001.mp4"
             },
             {
                 numero: 3,
-                titulo: "Preparando-se para a Entrevista"
+                titulo: "Preparando-se para a Entrevista",
+                video: "assets/videos/001.mp4"
             }
         ]
     }

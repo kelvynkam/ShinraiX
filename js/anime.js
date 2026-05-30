@@ -27,7 +27,11 @@ dados.episodios.forEach(episodio => {
 
         <p>${episodio.titulo}</p>
 
-        <button>Assistir</button>
+        <a href="../pages/player.html?anime=${animeNome}&ep=${episodio.numero}">
+        
+            <button>Assistir</button>
+        
+        </a>
 
     </div>
     
