@@ -4,6 +4,12 @@ JSON.parse(localStorage.getItem("favoritos")) || [];
 const linhaAnimes =
 document.querySelector(".linha-animes");
 
+const carrosselBtnEsquerda =
+document.querySelector(".carrossel-btn-esquerda");
+
+const carrosselBtnDireita =
+document.querySelector(".carrossel-btn-direita");
+
 const estaNaPastaPages =
 window.location.pathname.includes("/pages/");
 
@@ -14,6 +20,7 @@ const caminhoAnime = estaNaPastaPages
 function renderizarAnimes(lista){
     
     linhaAnimes.innerHTML = "";
+    linhaAnimes.scrollLeft = 0;
 
     if(lista.length === 0){
             
@@ -67,6 +74,29 @@ function renderizarAnimes(lista){
 }
 
 renderizarAnimes(animes);
+
+function rolarCarrossel(direcao){
+
+    const distancia =
+    linhaAnimes.clientWidth * direcao;
+
+    linhaAnimes.scrollBy({
+        left: distancia,
+        behavior: "smooth"
+    });
+}
+
+if(carrosselBtnEsquerda && carrosselBtnDireita){
+
+    carrosselBtnEsquerda.addEventListener("click", () => {
+        rolarCarrossel(-1);
+    });
+
+    carrosselBtnDireita.addEventListener("click", () => {
+        rolarCarrossel(1);
+    });
+
+}
 
 const campoBusca =
 document.getElementById("busca-anime");

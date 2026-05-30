@@ -72,6 +72,11 @@ nav a:hover{
     margin-bottom: 50px;
     position: relative;
     overflow: hidden;
+    transition: opacity 0.4s ease;
+}
+
+.banner.fade-out{
+    opacity: 0.85;
 }
 
 .banner::after{
@@ -94,6 +99,12 @@ nav a:hover{
     max-width: 500px;
     position: relative;
     z-index: 2;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.banner-conteudo.fade-out{
+    opacity: 0;
+    transform: translateY(10px);
 }
 
 .banner h1{
@@ -115,6 +126,35 @@ nav a:hover{
     padding: 12px 30px;
 }
 
+.banner-indicadores{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 26px;
+    position: relative;
+    z-index: 2;
+}
+
+.banner .banner-indicador{
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    opacity: 0.75;
+    transition: 0.3s ease;
+}
+
+.banner .banner-indicador:hover,
+.banner .banner-indicador.ativo{
+    border-color: red;
+    background: red;
+    box-shadow: 0 0 12px rgba(255, 0, 0, 0.6);
+    opacity: 1;
+}
+
 /* ==========CATÁLOGO========== */
 .catalogo{
     padding: 40px;
@@ -126,16 +166,19 @@ nav a:hover{
     padding-left: 20px;
 }
 
+.carrossel-home{
+    position: relative;
+}
+
 .linha-animes{
     display: flex;
     gap: 30px;
     justify-content: flex-start;
-    overflow-x: auto;
+    overflow-x: hidden;
     flex-wrap: nowrap;
     scroll-behavior: smooth;
-    padding-bottom: 10px;
-
-    padding-top: 20px;
+    padding: 20px 58px 16px;
+    scrollbar-width: none;
 }
 
 .catalogo-animes{
@@ -146,12 +189,41 @@ nav a:hover{
 }
 
 .linha-animes::-webkit-scrollbar{
-    height: 8px;
+    display: none;
 }
 
-.linha-animes::-webkit-scrollbar-thumb{
-    background-color: #444;
-    border-radius: 10px;
+.carrossel-btn{
+    width: 44px;
+    height: 72px;
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid rgba(255, 0, 0, 0.45);
+    border-radius: 8px;
+    background-color: rgba(20, 20, 20, 0.9);
+    color: white;
+    font-size: 42px;
+    line-height: 1;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.7);
+    transform: translateY(-50%);
+}
+
+.carrossel-btn:hover{
+    background-color: red;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.55);
+    transform: translateY(-50%) scale(1.03);
+}
+
+.carrossel-btn-esquerda{
+    left: 0;
+}
+
+.carrossel-btn-direita{
+    right: 0;
 }
 
 /* ==========CARDS========== */
@@ -472,6 +544,10 @@ footer{
 
     }
 
+    .banner-indicadores{
+        margin-top: 20px;
+    }
+
     nav{
     width: 100%;
     justify-content: center;
@@ -489,11 +565,16 @@ footer{
     .linha-animes{
         justify-content: flex-start;
         flex-wrap: nowrap;
-        overflow-x: auto;
+        overflow-x: hidden;
         gap: 16px;
-        padding: 0 20px 15px 20px;
-        padding-top: 20px;
+        padding: 20px 44px 15px;
         scroll-snap-type: x mandatory;
+    }
+
+    .carrossel-btn{
+        width: 36px;
+        height: 58px;
+        font-size: 34px;
     }
 
     .linha-animes .anime-card{
