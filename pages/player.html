@@ -5,20 +5,36 @@
 
     <title>Player | ShinraiX</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="../css/style.css">
 
 </head>
 
 <body>
 
-    <main>
-        <h1 id="titulo-episodio"></h1>
+    <main class="player-page">
 
-        <video
-            controls
-            width="100%"
-        >
-        </video>
+        <div class="player-info">
+            <h1 id="anime-titulo"></h1>
+            <h2 id="episodio-titulo"></h2>
+        </div>
+
+        <video controls width="100%"></video>
+
+        <div class="player-controles">
+            <button id="btn-anterior">
+                Episódio Anterior
+            </button>
+
+            <button id="btn-proximo">
+                Próximo Episódio
+            </button>
+        </div>
+
+        <a id="voltar-anime">
+            ← Voltar para o anime
+        </a>
     </main>
 
     <script src="../js/animes-data.js"></script>
