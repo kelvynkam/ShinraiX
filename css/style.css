@@ -226,6 +226,54 @@ nav a:hover{
     right: 0;
 }
 
+/* ==========CONTINUAR========== */
+.oculto{
+    display: none;
+}
+
+.continuar-assistindo{
+    padding: 40px;
+}
+
+.continuar-assistindo h2{
+    color: white;
+    margin-bottom: 20px;
+}
+
+.continuar-card{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 600px;
+}
+
+.continuar-card img{
+    width: 120px;
+    border-radius: 8px;
+}
+
+.continuar-card h3{
+    color: white;
+    margin-bottom: 8px;
+}
+
+.continuar-card p{
+    color: #ccc;
+    margin-bottom: 12px;
+}
+
+.continuar-card a{
+    display: inline-block;
+    background-color: #c1121f;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
 /* ==========CARDS========== */
 .anime-card{
     width: 300px;

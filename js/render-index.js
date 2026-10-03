@@ -128,3 +128,44 @@ if(campoBusca){
     });
 
 }
+
+function renderizarContinuarAssistindo(){
+
+    const dadosSalvos =
+    localStorage.getItem("continuarAssistindo");
+
+    if(!dadosSalvos){
+        return;
+    }
+
+    const dados =
+    JSON.parse(dadosSalvos);
+
+    const secao =
+    document.getElementById("continuar-assistindo");
+
+    const card =
+    document.getElementById("continuar-card");
+
+    if (!secao || !card){
+        return;
+    }
+
+    secao.classList.remove("oculto");
+
+    card.innerHTML = `
+        <img src="${dados.capa}" alt="${dados.animeTitulo}">
+
+        <div>
+            <h3>${dados.animeTitulo}</h3>
+            <p>EP ${dados.episodioNumero} - ${dados.episodioTitulo}</p>
+
+            <a href="pages/player.html?anime=${dados.animeId}&ep=${dados.episodioNumero}">
+                Continuar
+            </a>
+        </div>
+    `;
+
+}
+
+renderizarContinuarAssistindo();

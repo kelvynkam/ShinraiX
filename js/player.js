@@ -37,7 +37,10 @@ function iniciarPlayer(){
     tituloEpisodio.textContent =
     `EP ${episodio.numero} - ${episodio.titulo}`;
 
-    video.src = "../" + episodio.video;
+    video.src = 
+    "../" + episodio.video;
+
+    salvarContinuarAssistindo(anime, episodio);
 
     const existeProximo = 
     anime.episodios.some(
@@ -90,6 +93,22 @@ function iniciarPlayer(){
     voltarAnime.textContent =
     `← Voltar para ${anime.titulo}`;
 
+}
+
+function salvarContinuarAssistindo(anime, episodio){
+
+    const dados = {
+        animeId: anime.id,
+        animeTitulo: anime.titulo,
+        episodioNumero: episodio.numero,
+        episodioTitulo: episodio.titulo,
+        capa: anime.imagem
+    };
+
+    localStorage.setItem(
+        "continuarAssistindo",
+        JSON.stringify(dados)
+    );
 }
 
 iniciarPlayer();
