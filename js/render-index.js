@@ -1,5 +1,5 @@
 const favoritosSalvos =
-JSON.parse(localStorage.getItem("favoritos")) || [];
+ShinraiXStorage.carregarFavoritos();
 
 const linhaAnimes =
 document.querySelector(".linha-animes");

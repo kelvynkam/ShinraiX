@@ -1,70 +1,76 @@
-//Adiciona os favoritos
 const listaFavoritos =
-JSON.parse(localStorage.getItem("favoritos")) || [];
+document.getElementById("lista-favoritos");
 
-const linhaAnimes =
-document.querySelector(".linha-animes");
+function renderizarFavoritos(){
 
-listaFavoritos.forEach(id => {
+    const favoritos =
+    ShinraiXStorage.carregarFavoritos();
 
-    const anime = animes.find(
-        anime => anime.id === id
-    );
+    const animesFavoritos =
+    animes.filter(anime => favoritos.includes(anime.id));
 
-    if(!anime){
+    listaFavoritos.innerHTML = "";
+
+    if(animesFavoritos.length === 0){
+
+        listaFavoritos.innerHTML = `
+            <p class="nenhum-anime">
+                Nenhum anime favoritado ainda.
+            </p>
+        `;
+
+        return;
+
+    }
+
+    animesFavoritos.forEach(anime => {
+
+        listaFavoritos.innerHTML += `
+            <div class="anime-card">
+
+                <img src="../${anime.imagem}" alt="${anime.titulo}">
+
+                <h2>${anime.titulo}</h2>
+
+                <p class="generos">
+                    ${anime.generos}
+                </p>
+
+                <p class="descricao">
+                    ${anime.descricao}
+                </p>
+
+                <a href="anime.html?anime=${anime.id}">
+                    <button>Assistir agora</button>
+                </a>
+
+                <button class="remover-favorito-btn" data-anime="${anime.id}">
+                    Remover dos favoritos
+                </button>
+
+            </div>
+        `;
+
+    });
+
+}
+
+document.addEventListener("click", (evento) => {
+
+    const botaoRemover =
+    evento.target.closest(".remover-favorito-btn");
+
+    if(!botaoRemover){
         return;
     }
 
-    linhaAnimes.innerHTML += `
+    const animeId =
+    botaoRemover.dataset.anime;
 
-    <div class="anime-card">
+    ShinraiXStorage.removerFavorito(animeId);
 
-        <img src="../${anime.imagem}" alt="${anime.titulo}">
-
-        <h2>${anime.titulo}</h2>
-
-        <p class="generos">
-            ${anime.generos}
-        </p>
-
-        <p class="descricao">
-            ${anime.descricao}
-        </p>
-
-        <a href="../pages/anime.html?anime=${id}">
-            <button>Assistir agora</button>
-        </a>
-
-        <button class="remover-btn" data-id="${id}">
-            ❌ Remover
-        </button>
-
-    </div>
-
-    `;
+    renderizarFavoritos();
 
 });
 
-// Remoção dos favoritos
-document.addEventListener("click", (event) => {
-
-    if(event.target.classList.contains("remover-btn")){
-
-        const id = event.target.dataset.id;
-
-        let favoritos =
-        JSON.parse(localStorage.getItem("favoritos")) || [];
-
-        favoritos = favoritos.filter(
-            anime => anime !== id
-        );
-
-        localStorage.setItem(
-            "favoritos",
-            JSON.stringify(favoritos)
-        );
-
-        location.reload();
-    }
-
-});
+renderizarFavoritos();

@@ -4,6 +4,19 @@ Todas as mudanças importantes do projeto ShinraiX serão documentadas aqui.
 
 ---
 
+# v0.2.5 - Melhora progresso do continuar assistindo
+
+## Adicionado
+
+- Barra de progresso no card "Continuar assistindo"
+- Salvamento da duração do vídeo junto com o tempo atual
+- Remoção automática do card quando o episódio está quase finalizado
+
+## Melhorias
+
+- Visual mais claro do progresso assistido
+- Experiência mais próxima de uma plataforma de streaming
+
 # v0.2.4 - Organiza armazenamento local
 
 ## Adicionado

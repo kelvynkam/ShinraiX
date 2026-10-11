@@ -34,7 +34,85 @@ const ShinraiXStorage = {
 
     removerContinuarAssistindo(){
 
-        localStorage.removeItem("continuarAssistindo")
+        localStorage.removeItem("continuarAssistindo");
+
+    },
+
+    carregarFavoritos(){
+
+        const favoritosSalvos =
+        localStorage.getItem("favoritos");
+
+        if(!favoritosSalvos){
+            return [];
+        }
+
+        return JSON.parse(favoritosSalvos);
+
+    },
+
+    salvarFavoritos(favoritos){
+
+        localStorage.setItem(
+            "favoritos",
+            JSON.stringify(favoritos)
+        );
+
+    },
+
+    animeEstaFavoritado(animeId){
+
+        const favoritos =
+        this.carregarFavoritos();
+
+        return favoritos.includes(animeId);
+
+    },
+
+    adicionarFavorito(animeId){
+
+        const favoritos =
+        this.carregarFavoritos();
+
+        if(favoritos.includes(animeId)){
+            return favoritos;
+        }
+
+        favoritos.push(animeId);
+
+        this.salvarFavoritos(favoritos);
+
+        return favoritos;
+
+    },
+
+    removerFavorito(animeId){
+
+        const favoritos =
+        this.carregarFavoritos();
+
+        const favoritosAtualizados =
+        favoritos.filter(id => id !== animeId);
+
+        this.salvarFavoritos(favoritosAtualizados);
+
+        return favoritosAtualizados;
+
+    },
+
+    alternarFavorito(animeId){
+
+        if(this.animeEstaFavoritado(animeId)){
+
+            this.removerFavorito(animeId);
+
+            return false;
+
+        }
+
+        this.adicionarFavorito(animeId);
+
+        return true;
 
     }
 

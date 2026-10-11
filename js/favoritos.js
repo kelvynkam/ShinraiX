@@ -1,28 +1,30 @@
-const botoesFavorito = document.querySelectorAll(".favorito-btn");
+document.addEventListener("click", (evento) => {
 
-botoesFavorito.forEach(botao => {
+    const botaoFavorito =
+    evento.target.closest(".favorito-btn");
 
-    botao.addEventListener("click", () => {
+    if(!botaoFavorito){
+        return;
+    }
 
-        const anime = botao.dataset.anime;
+    const animeId =
+    botaoFavorito.dataset.anime;
 
-        let favoritos =
-        JSON.parse(localStorage.getItem("favoritos")) || [];
+    const ficouFavoritado =
+    ShinraiXStorage.alternarFavorito(animeId);
 
-        if(!favoritos.includes(anime)){
+    if(ficouFavoritado){
 
-            favoritos.push(anime);
+        botaoFavorito.classList.add("favoritados");
+        botaoFavorito.textContent =
+        "✅ Favoritado";
 
-            localStorage.setItem(
-                "favoritos",
-                JSON.stringify(favoritos)
-            );
-            
-            alert("Anime adicionado aos favoritos!");
+    }else {
 
-        } else {
+        botaoFavorito.classList.remove("favoritados");
+        botaoFavorito.textContent =
+        "❤️ Favoritar";
 
-            alert("Esse anime ja esta nos favoritos!");
-        }
-    });
+    }
+
 });
