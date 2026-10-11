@@ -424,13 +424,20 @@ nav a:hover{
     color: #ccc;
 }
 
-/* ==========PÁGINA DO ANIME========== */
+/* =========================
+   PÁGINA DO ANIME
+========================= */
+
+.anime-page{
+    background-color: #111;
+}
+
 .anime-detalhes{
     position: relative;
-    min-height: 70vh;
+    min-height: 520px;
     display: flex;
-    align-items: end;
-    padding: 60px;
+    align-items: flex-end;
+    padding: 80px 60px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -443,38 +450,113 @@ nav a:hover{
     background: linear-gradient(
         to top,
         rgba(0,0,0,0.95),
-        rgba(0,0,0,0.4)
+        rgba(0,0,0,0.35)
     );
-
 }
 
-.info{
+.anime-hero-info{
     position: relative;
     z-index: 2;
-    max-width: 600px;
-
-    margin-bottom: 40px;
-
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    max-width: 650px;
 }
 
-.info h1{
-    font-size: 60px;
+.anime-label{
+    color: #e50914;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.anime-hero-info h1{
+    color: white;
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.anime-generos{
+    color: #ddd;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.anime-descricao{
+    color: #eee;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.anime-meta{
+    color: #bbb;
     margin-bottom: 20px;
 }
 
-.info p{
-    font-size: 18px;
-    margin-bottom: 15px;
-    line-height: 1.6;
-    color: #ddd;
+.btn-assistir-principal{
+    display: inline-block;
+    background-color: #e50914;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
 }
 
-.info button{
-    font-size: 18px;
-    padding: 14px 30px;
+.anime-sobre{
+    padding: 40px 60px 20px 60px;
+    max-width: 900px;
+}
+
+.anime-sobre h2,
+.episodios h2{
+    color: white;
+    margin-bottom: 16px;
+}
+
+.anime-sobre p{
+    color: #ccc;
+    line-height: 1.7;
+}
+
+.episodios{
+    padding: 40px 60px;
+}
+
+.episodios-lista{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.episodio-card{
+    display: grid;
+    grid-template-columns: 160px 1fr auto;
+    gap: 20px;
+    align-items: center;
+    background-color: #1b1b1b;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.episodio-thumb{
+    width: 160px;
+    height: 90px;
+    object-fit: contain;
+    background-color: #111;
+    border-radius: 8px;
+}
+
+.episodio-numero{
+    color: #e50914;
+    font-weight: 700;
+}
+
+.episodio-info h3{
+    color: white;
+    margin: 6px 0;
+}
+
+.episodio-info p{
+    color: #aaa;
 }
 
 /* ==========BUSCA========== */
@@ -542,99 +624,154 @@ button:disabled{
 
 /* ==========PLAYER========== */
 .player-page{
-    position: relative;
-    isolation: isolate;
-    width: min(1180px, 100%);
+    width: min(1600px, 100%);
     margin: 0 auto;
-    padding: 34px 24px 48px;
-    display: flex;
-    flex-direction: column;
+    padding: 24px 32px 40px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-content: start;
     align-items: center;
-    gap: 22px;
+    gap: 0 24px;
 }
 
-.player-page::before{
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    background:
-        radial-gradient(circle at top left, rgba(255, 0, 0, 0.16), transparent 34%),
-        linear-gradient(180deg, #090909 0%, #111 55%, #080808 100%);
-}
-
-.player-info{
+.player-page .player-info{
+    grid-column: 1 / -1;
+    min-width: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
+    padding: 0 0 18px 16px;
+    border-left: 3px solid #e50914;
+    overflow-wrap: anywhere;
 }
 
-.player-info h1{
+.player-page .player-info h1{
     color: #fff;
-    font-size: clamp(28px, 5vw, 52px);
-    line-height: 1.05;
+    font-size: 28px;
+    line-height: 1.25;
 }
 
-.player-info h2{
-    color: #ff4444;
-    font-size: clamp(16px, 2.4vw, 24px);
-    font-weight: 600;
+.player-page .player-info h2{
+    color: #b5b5b5;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
 }
 
 .player-page video{
+    grid-column: 1 / -1;
+    min-width: 0;
     width: 100%;
-    max-height: min(68vh, 720px);
+    max-height: 78vh;
+    max-height: 78svh;
     aspect-ratio: 16 / 9;
     object-fit: contain;
     display: block;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 14px;
+    border-radius: 8px;
     background-color: #000;
-    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
 }
 
-.player-controles{
+.player-page .player-controles{
+    grid-column: 2;
+    grid-row: 3;
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 14px;
+    gap: 12px;
     flex-wrap: wrap;
+    margin-top: 20px;
 }
 
-.player-controles button{
-    min-width: 190px;
-    padding: 13px 24px;
-    border-radius: 999px;
+.player-page .player-controles button{
+    min-height: 48px;
+    min-width: 180px;
+    padding: 12px 20px;
+    border: 1px solid #383838;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.5;
     font-weight: bold;
     letter-spacing: 0;
-    background: #d80000;
-    box-shadow: 0 10px 28px rgba(216, 0, 0, 0.24);
+    background: #202020;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
 }
 
-.player-controles button:hover{
-    background: #ff1f1f;
-    box-shadow: 0 12px 32px rgba(255, 0, 0, 0.34);
+.player-page #btn-proximo{
+    background: #e50914;
+    border-color: #e50914;
 }
 
-.player-controles button:disabled,
-.player-controles button:disabled:hover{
-    background: #2a2a2a;
-    color: #777;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+.player-page .player-controles button:hover{
+    background: #303030;
+    border-color: #666;
+    transform: none;
+}
+
+.player-page #btn-proximo:hover{
+    background: #ff202b;
+    border-color: #ff202b;
+}
+
+.player-page .player-controles button:disabled,
+.player-page .player-controles button:disabled:hover,
+.player-page #btn-proximo:disabled,
+.player-page #btn-proximo:disabled:hover{
+    background: #191919;
+    color: #888;
+    border-color: #292929;
+    opacity: 1;
     box-shadow: none;
     transform: none;
 }
 
-#voltar-anime{
-    color: #ccc;
+.player-page #voltar-anime{
+    grid-column: 1;
+    grid-row: 3;
+    justify-self: start;
+    min-width: 0;
+    padding: 12px 0;
+    margin-top: 20px;
+    color: #b5b5b5;
     text-decoration: none;
-    font-size: 15px;
-    transition: 0.3s;
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    transition: color 0.2s;
 }
 
-#voltar-anime:hover{
+.player-page #voltar-anime:hover{
     color: #ff4444;
+}
+
+.player-page button:focus-visible,
+.player-page #voltar-anime:focus-visible{
+    outline: 2px solid #fff;
+    outline-offset: 4px;
+}
+
+.player-detalhes{
+    max-width: 1100px;
+    margin: 24px auto 20px auto;
+    padding: 20px;
+    background-color: #181818;
+    border-left: 4px solid #e50914;
+    border-radius: 10px;
+}
+
+.player-detalhes h3{
+    color: white;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.player-detalhes p{
+    color: #ccc;
+    line-height: 1.6;
+    font-size: 15px;
 }
 /* ==========FOOTER========== */
 footer{
@@ -786,52 +923,121 @@ footer{
         font-size: 15px;
     }
 
-    .info h1{
-        font-size: 36px;
+    .anime-detalhes{
+    min-height: 520px;
+    padding: 120px 24px 40px 24px;
+    align-items: flex-end;
     }
 
-    .info p{
-        font-size: 16px;
+    .anime-hero-info h1{
+    font-size: 34px;
+    }
+
+    .anime-generos{
+    font-size: 15px;
+    }
+
+    .anime-descricao{
+    font-size: 15px;
+    }
+
+    .btn-assistir-principal{
+    width: 100%;
+    text-align: center;
+    }
+
+    .anime-sobre{
+    padding: 32px 24px 10px 24px;
+    }
+
+    .episodios{
+    padding: 32px 24px;
     }
 
     .episodio-card{
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
+    grid-template-columns: 96px 1fr;
+    gap: 14px;
+    align-items: center;
+    }
+
+    .episodio-thumb{
+    width: 96px;
+    height: 64px;
+    }
+
+    .episodio-info h3{
+    font-size: 16px;
+    }
+
+    .episodio-info p{
+    font-size: 13px;
+    }
+
+    .episodio-card a{
+    grid-column: 1 / -1;
     }
 
     .episodio-card button{
-        width: 100%;
+    width: 100%;
     }
 
     .player-page{
-        padding: 24px 14px 36px;
-        gap: 18px;
+        grid-template-columns: minmax(0, 1fr);
+        padding: 20px 12px 28px;
+        gap: 0;
     }
 
-    .player-info{
-        gap: 6px;
+    .player-page .player-info{
+        padding-left: 12px;
+    }
+
+    .player-page .player-info h1{
+        font-size: 22px;
+    }
+
+    .player-page .player-info h2{
+        font-size: 14px;
     }
 
     .player-page video{
-        max-height: 56vh;
-        border-radius: 10px;
+        border-radius: 6px;
     }
 
-    .player-controles{
+    .player-page .player-controles{
+        grid-column: 1;
         flex-direction: column;
         gap: 10px;
     }
 
-    .player-controles button{
+    .player-page .player-controles button{
         width: 100%;
         min-width: 0;
     }
 
-    #voltar-anime{
+    .player-page #voltar-anime{
+        grid-row: 4;
         width: 100%;
         text-align: center;
+        margin-top: 12px;
+    }
+
+@media (max-width: 600px){
+
+    .player-detalhes{
+        margin-top: 20px;
+        padding: 16px;
+        border-left: 3px solid #e50914;
+    }
+
+    .player-detalhes h3{
+        font-size: 18px;
+    }
+
+    .player-detalhes p{
+        font-size: 14px;
         line-height: 1.5;
     }
+
+}
 
 }

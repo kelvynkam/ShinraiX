@@ -4,6 +4,20 @@ Todas as mudanças importantes do projeto ShinraiX serão documentadas aqui.
 
 ---
 
+# v0.2.6 - Organiza sistema de favoritos
+
+## Adicionado
+
+- Funções de favoritos no `storage.js`
+- Alternância de favoritos usando `ShinraiXStorage`
+- Remoção de favoritos pela página de favoritos
+
+## Melhorias
+
+- Organização do uso de `localStorage`
+- Atualização imediata do botão de favorito
+- Integração entre Home, Catálogo e Favoritos
+
 # v0.2.5 - Melhora progresso do continuar assistindo
 
 ## Adicionado

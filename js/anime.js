@@ -4,9 +4,15 @@ new URLSearchParams(window.location.search);
 const animeNome =
 params.get("anime");
 
-const dados = animes.find(
-    anime => anime.id === animeNome
-);
+const dados =
+animes.find(anime => anime.id === animeNome);
+
+if(!dados){
+
+    window.location.href =
+    "../index.html";
+
+}
 
 const estaNaPastaPages =
 window.location.pathname.includes("/pages/");
@@ -15,37 +21,86 @@ const caminhoBanner = estaNaPastaPages
 ? "../" + dados.banner
 : dados.banner;
 
+const caminhoImagem = estaNaPastaPages
+? "../" + dados.imagem
+: dados.imagem;
+
 const listaEpisodios =
 document.querySelector(".episodios-lista");
+
+const tituloAnime =
+document.getElementById("anime-titulo");
+
+const generosAnime =
+document.getElementById("anime-generos");
+
+const descricaoAnime =
+document.getElementById("anime-descricao");
+
+const sinopseCompleta =
+document.getElementById("anime-sinopse-completa");
+
+const totalEpisodios =
+document.getElementById("anime-total-episodios");
+
+const botaoAssistir =
+document.getElementById("anime-assistir");
+
+tituloAnime.textContent =
+dados.titulo;
+
+generosAnime.textContent =
+dados.generos;
+
+descricaoAnime.textContent =
+dados.descricao;
+
+sinopseCompleta.textContent =
+dados.sinopse;
+
+totalEpisodios.textContent =
+`${dados.episodios.length} episódios disponíveis`;
+
+botaoAssistir.href =
+`player.html?anime=${dados.id}&ep=${dados.episodios[0].numero}`;
+
+document.querySelector(".anime-detalhes").style.backgroundImage =
+`linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.35)), url(${caminhoBanner})`;
+
+listaEpisodios.innerHTML = "";
+
 dados.episodios.forEach(episodio => {
 
     listaEpisodios.innerHTML += `
-    
-    <div class="episodio-card">
-    
-        <h3>EP ${episodio.numero}</h3>
+        <article class="episodio-card">
 
-        <p>${episodio.titulo}</p>
+            <img 
+                src="${caminhoImagem}" 
+                alt="${dados.titulo}"
+                class="episodio-thumb"
+            >
 
-        <a href="../pages/player.html?anime=${animeNome}&ep=${episodio.numero}">
-        
-            <button>Assistir</button>
-        
-        </a>
+            <div class="episodio-info">
 
-    </div>
-    
+                <span class="episodio-numero">
+                    EP ${episodio.numero}
+                </span>
+
+                <h3>
+                    ${episodio.titulo}
+                </h3>
+
+                <p>
+                    ${dados.generos}
+                </p>
+
+            </div>
+
+            <a href="player.html?anime=${animeNome}&ep=${episodio.numero}">
+                <button>Assistir</button>
+            </a>
+
+        </article>
     `;
+
 });
-
-document.getElementById("anime-titulo").textContent =
-dados.titulo;
-
-document.getElementById("anime-generos").textContent =
-dados.generos;
-
-document.getElementById("anime-descricao").textContent =
-dados.sinopse;
-
-document.querySelector(".anime-detalhes").style.backgroundImage =
-`linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.4)), url(${caminhoBanner})`;

@@ -31,11 +31,17 @@ function iniciarPlayer(){
     const video =
     document.querySelector("video");
 
+    const sinopseEpisodio =
+    document.getElementById("episodio-sinopse");
+
     tituloAnime.textContent =
     anime.titulo;
 
     tituloEpisodio.textContent =
     `EP ${episodio.numero} - ${episodio.titulo}`;
+
+    sinopseEpisodio.textContent =
+episodio.descricao || anime.sinopse || anime.descricao || "Sinopse indisponível.";
 
     video.src = 
     "../" + episodio.video;
