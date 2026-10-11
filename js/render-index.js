@@ -203,6 +203,7 @@ function renderizarContinuarAssistindo(){
 
         <div class="continuar-info">
             <h3>${dados.animeTitulo}</h3>
+
             <p>
                 EP ${dados.episodioNumero} - ${dados.episodioTitulo}
             </p>
@@ -219,7 +220,7 @@ function renderizarContinuarAssistindo(){
             </div>
 
             <a 
-                class="btn-continuar" 
+                class="btn-continuar"
                 href="pages/player.html?anime=${dados.animeId}&ep=${dados.episodioNumero}">
                 Continuar
             </a>

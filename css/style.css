@@ -248,12 +248,15 @@ nav a:hover{
     border-radius: 12px;
     padding: 20px;
     max-width: 600px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .continuar-info{
     display: flex;
     flex-direction: column;
     gap: 8px;
+    min-width: 0;
 }
 
 .continuar-card img{
@@ -287,11 +290,13 @@ nav a:hover{
 }
 
 .barra-progresso{
-    width: 220px;
+    width: 100%;
+    max-width: 220px;
     height: 6px;
     background-color: #333;
     border-radius: 999px;
     overflow: hidden;
+    margin-bottom: 14px;
 }
 
 .barra-progresso-preenchida{
@@ -1011,6 +1016,44 @@ footer{
         width: 100%;
         text-align: center;
         margin-top: 12px;
+    }
+
+    .continuar-assistindo{
+        padding: 32px 24px;
+    }
+
+    .continuar-card{
+        display: grid;
+        grid-template-columns: 96px 1fr;
+        gap: 14px;
+        align-items: center;
+        max-width: 100%;
+    }
+
+    .continuar-card img{
+        width: 96px;
+    }
+
+    .continuar-info{
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .continuar-info h3{
+        font-size: 18px;
+    }
+
+    .continuar-info p{
+        font-size: 14px;
+    }
+
+    .barra-progresso{
+        max-width: 100%;
+    }
+
+    .btn-continuar{
+        width: 100%;
+        text-align: center;
     }
 
 @media (max-width: 600px){
