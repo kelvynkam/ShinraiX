@@ -4,6 +4,18 @@ Todas as mudanças importantes do projeto ShinraiX serão documentadas aqui.
 
 ---
 
+# v0.2.4 - Organiza armazenamento local
+
+## Adicionado
+
+- Arquivo `storage.js` para centralizar funções de armazenamento local
+- Funções para salvar, carregar e remover o progresso de "Continuar assistindo"
+
+## Melhorias
+
+- Organização do uso de `localStorage`
+- Preparação do projeto para futuras integrações com API ou banco de dados
+
 # v0.2.3 - Salva progresso do episódio
 
 ## Adicionado

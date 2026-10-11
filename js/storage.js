@@ -1,6 +1,6 @@
 const ShinraiXStorage = {
 
-    salvarContinuarAssistindo(anime, episodio, tempoAtual){
+    salvarContinuarAssistindo(anime, episodio, tempoAtual, duracao){
 
         const dados = {
             animeId: anime.id,
@@ -8,7 +8,8 @@ const ShinraiXStorage = {
             episodioNumero: episodio.numero,
             episodioTitulo: episodio.titulo,
             capa: anime.imagem,
-            tempoAtual: tempoAtual
+            tempoAtual: tempoAtual,
+            duracao: duracao
         };
 
         localStorage.setItem(

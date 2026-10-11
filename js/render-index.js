@@ -150,6 +150,18 @@ function formatarTempo(segundos){
     return `${minutosFormatados}:${segundosFormatados}`;
 }
 
+function calcularProcentagemAssistida(tempoAtual, duracao){
+
+    if(!duracao || duracao <= 0){
+        return 0;
+    }
+
+    const porcentagem =
+    (tempoAtual / duracao) * 100;
+
+    return Math.min(porcentagem, 100);
+}
+
 function renderizarContinuarAssistindo(){
 
     const dados =
@@ -161,6 +173,18 @@ function renderizarContinuarAssistindo(){
 
     const tempoFormatado =
     formatarTempo(dados.tempoAtual);
+
+    const porcentagemAssistida =
+    calcularProcentagemAssistida(
+        dados.tempoAtual,
+        dados.duracao
+    );
+
+    if(porcentagemAssistida >= 95){
+
+        ShinraiXStorage.removerContinuarAssistindo();
+        return;
+    }
 
     const secao =
     document.getElementById("continuar-assistindo");
@@ -177,7 +201,7 @@ function renderizarContinuarAssistindo(){
     card.innerHTML = `
         <img src="${dados.capa}" alt="${dados.animeTitulo}">
 
-        <div>
+        <div class="continuar-info">
             <h3>${dados.animeTitulo}</h3>
             <p>
                 EP ${dados.episodioNumero} - ${dados.episodioTitulo}
@@ -187,7 +211,16 @@ function renderizarContinuarAssistindo(){
                 Parou em ${tempoFormatado}
             </p>
 
-            <a href="pages/player.html?anime=${dados.animeId}&ep=${dados.episodioNumero}">
+            <div class="barra-progresso">
+                <div
+                    class="barra-progresso-preenchida"
+                    style="width: ${porcentagemAssistida}%;">
+                </div>
+            </div>
+
+            <a 
+                class="btn-continuar" 
+                href="pages/player.html?anime=${dados.animeId}&ep=${dados.episodioNumero}">
                 Continuar
             </a>
         </div>

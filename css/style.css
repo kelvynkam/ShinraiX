@@ -250,6 +250,12 @@ nav a:hover{
     max-width: 600px;
 }
 
+.continuar-info{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
 .continuar-card img{
     width: 120px;
     border-radius: 8px;
@@ -278,6 +284,31 @@ nav a:hover{
     color: #ff3b3b;
     font-size: 14px;
     margin-bottom: 12px;
+}
+
+.barra-progresso{
+    width: 220px;
+    height: 6px;
+    background-color: #333;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.barra-progresso-preenchida{
+    height: 100%;
+    background-color: #e50914;
+    border-radius: 999px;
+}
+
+.btn-continuar{
+    width: fit-content;
+    display: inline-block;
+    background-color: #c1121f;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 4px;
 }
 
 /* ==========CARDS========== */

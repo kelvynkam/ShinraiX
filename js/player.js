@@ -61,7 +61,8 @@ function iniciarPlayer(){
     ShinraiXStorage.salvarContinuarAssistindo(
         anime,
         episodio,
-        mesmoEpisodio ? progressoSalvo.tempoAtual : 0
+        mesmoEpisodio ? progressoSalvo.tempoAtual : 0,
+        video.duration || 0
     );
 
     video.addEventListener("timeupdate", () => {
@@ -69,7 +70,8 @@ function iniciarPlayer(){
         ShinraiXStorage.salvarContinuarAssistindo(
             anime,
             episodio,
-            video.currentTime
+            video.currentTime,
+            video.duration
         );
 
     });
