@@ -4,6 +4,22 @@ Todas as mudanças importantes do projeto ShinraiX serão documentadas aqui.
 
 ---
 
+# v0.2.2 - Continuar assistindo
+
+## Adicionado
+
+- Seção "Continuar assistindo" na página inicial
+- Salvamento do último episódio abertono localStorage
+- Renderização dinâmica do card de continuar assistindo
+- Botão para retornar diretamente ao último episódio assistido
+
+## Melhorias
+
+- Integração entre o player e a página inicial
+- Organização inicial da lógica de progresso local do usuário
+
+---
+
 # v0.2.1 - Estrutura do player
 
 ## Adicionado
@@ -15,12 +31,17 @@ Todas as mudanças importantes do projeto ShinraiX serão documentadas aqui.
 - Validação para anime ou episódio inexistente
 - Estilização inicial do player
 
+---
+
 # v0.2.0 - Adicionado player de vídeo
 
 ## Adicionado
 
-- Primeira versão da página de player
+- Página inicial do player de vídeo
 - Suporte a vídeo local para testes
+- Integração dos episódios com o player
+
+---
 
 # v0.1.0 - Sistema de busca implementado
 

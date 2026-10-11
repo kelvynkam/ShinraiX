@@ -129,6 +129,27 @@ if(campoBusca){
 
 }
 
+function formatarTempo(segundos){
+
+    if(!segundos){
+        return "00:00";
+    }
+
+    const minutos =
+    Math.floor(segundos / 60);
+
+    const segundosRestantes =
+    Math.floor(segundos % 60);
+
+    const minutosFormatados = 
+    String(minutos).padStart(2, "0");
+
+    const segundosFormatados =
+    String(segundosRestantes).padStart(2, "0");
+
+    return `${minutosFormatados}:${segundosFormatados}`;
+}
+
 function renderizarContinuarAssistindo(){
 
     const dadosSalvos =
@@ -140,6 +161,9 @@ function renderizarContinuarAssistindo(){
 
     const dados =
     JSON.parse(dadosSalvos);
+
+    const tempoFormatado =
+    formatarTempo(dados.tempoAtual);
 
     const secao =
     document.getElementById("continuar-assistindo");
@@ -158,7 +182,13 @@ function renderizarContinuarAssistindo(){
 
         <div>
             <h3>${dados.animeTitulo}</h3>
-            <p>EP ${dados.episodioNumero} - ${dados.episodioTitulo}</p>
+            <p>
+                EP ${dados.episodioNumero} - ${dados.episodioTitulo}
+            </p>
+
+            <p class="tempo-continuar">
+                Parou em ${tempoFormatado}
+            </p>
 
             <a href="pages/player.html?anime=${dados.animeId}&ep=${dados.episodioNumero}">
                 Continuar

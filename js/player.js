@@ -40,7 +40,39 @@ function iniciarPlayer(){
     video.src = 
     "../" + episodio.video;
 
-    salvarContinuarAssistindo(anime, episodio);
+    const progressoSalvo =
+    carregarContinuarAssistindo();
+
+    const mesmoEpisodio =
+    progressoSalvo &&
+    progressoSalvo.animeId === anime.id &&
+    progressoSalvo.episodioNumero === episodio.numero;
+
+    if(mesmoEpisodio && progressoSalvo.tempoAtual > 1){
+
+        video.addEventListener("loadedmetadata", () => {
+
+            video.currentTime =
+            progressoSalvo.tempoAtual;
+
+        });
+    }
+
+    salvarContinuarAssistindo(
+        anime,
+        episodio,
+        mesmoEpisodio ? progressoSalvo.tempoAtual : 0
+    );
+
+    video.addEventListener("timeupdate", () => {
+
+        salvarContinuarAssistindo(
+            anime,
+            episodio,
+            video.currentTime
+        );
+
+    });
 
     const existeProximo = 
     anime.episodios.some(
@@ -95,20 +127,33 @@ function iniciarPlayer(){
 
 }
 
-function salvarContinuarAssistindo(anime, episodio){
+function salvarContinuarAssistindo(anime, episodio, tempoAtual){
 
     const dados = {
         animeId: anime.id,
         animeTitulo: anime.titulo,
         episodioNumero: episodio.numero,
         episodioTitulo: episodio.titulo,
-        capa: anime.imagem
+        capa: anime.imagem,
+        tempoAtual: tempoAtual
     };
 
     localStorage.setItem(
         "continuarAssistindo",
         JSON.stringify(dados)
     );
+}
+
+function carregarContinuarAssistindo(){
+
+    const dadosSalvos =
+    localStorage.getItem("continuarAssistindo");
+
+    if(!dadosSalvos){
+        return  null;
+    }
+
+    return JSON.parse(dadosSalvos);
 }
 
 iniciarPlayer();
