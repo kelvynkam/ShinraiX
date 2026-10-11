@@ -4,6 +4,19 @@ Todas as mudanças importantes do projeto ShinraiX serão documentadas aqui.
 
 ---
 
+# v0.2.3 - Salva progresso do episódio
+
+## Adicionado
+
+- Salvamento do tempo atual do vídeo no `localStorage`
+- Retomada automática do episódio no tempo salvo
+- Exibição do tempo salvo no card "Continuar assistindo"
+
+## Melhorias
+
+- Evolução do sistema de continuar assistindo
+- Melhor integração entre player e página inicial
+
 # v0.2.2 - Continuar assistindo
 
 ## Adicionado

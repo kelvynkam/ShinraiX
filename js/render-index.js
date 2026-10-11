@@ -152,15 +152,12 @@ function formatarTempo(segundos){
 
 function renderizarContinuarAssistindo(){
 
-    const dadosSalvos =
-    localStorage.getItem("continuarAssistindo");
+    const dados =
+    ShinraiXStorage.carregarContinuarAssistindo();
 
-    if(!dadosSalvos){
+    if(!dados){
         return;
     }
-
-    const dados =
-    JSON.parse(dadosSalvos);
 
     const tempoFormatado =
     formatarTempo(dados.tempoAtual);

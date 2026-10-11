@@ -41,7 +41,7 @@ function iniciarPlayer(){
     "../" + episodio.video;
 
     const progressoSalvo =
-    carregarContinuarAssistindo();
+    ShinraiXStorage.carregarContinuarAssistindo();
 
     const mesmoEpisodio =
     progressoSalvo &&
@@ -58,7 +58,7 @@ function iniciarPlayer(){
         });
     }
 
-    salvarContinuarAssistindo(
+    ShinraiXStorage.salvarContinuarAssistindo(
         anime,
         episodio,
         mesmoEpisodio ? progressoSalvo.tempoAtual : 0
@@ -66,7 +66,7 @@ function iniciarPlayer(){
 
     video.addEventListener("timeupdate", () => {
 
-        salvarContinuarAssistindo(
+        ShinraiXStorage.salvarContinuarAssistindo(
             anime,
             episodio,
             video.currentTime
@@ -125,35 +125,6 @@ function iniciarPlayer(){
     voltarAnime.textContent =
     `← Voltar para ${anime.titulo}`;
 
-}
-
-function salvarContinuarAssistindo(anime, episodio, tempoAtual){
-
-    const dados = {
-        animeId: anime.id,
-        animeTitulo: anime.titulo,
-        episodioNumero: episodio.numero,
-        episodioTitulo: episodio.titulo,
-        capa: anime.imagem,
-        tempoAtual: tempoAtual
-    };
-
-    localStorage.setItem(
-        "continuarAssistindo",
-        JSON.stringify(dados)
-    );
-}
-
-function carregarContinuarAssistindo(){
-
-    const dadosSalvos =
-    localStorage.getItem("continuarAssistindo");
-
-    if(!dadosSalvos){
-        return  null;
-    }
-
-    return JSON.parse(dadosSalvos);
 }
 
 iniciarPlayer();
